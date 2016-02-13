@@ -23,6 +23,12 @@ public class RestController {
 	
 	static final Logger logger = Logger.getLogger(RestController.class);
 	
+	@RequestMapping(method = RequestMethod.GET, value = "/ping")
+	public @ResponseBody
+	String ping(){
+		return "The service is running";
+	}
+	
 	@RequestMapping(method = RequestMethod.POST, value = "/create")
 	public @ResponseBody 
 	void addAdvert(@RequestBody Advert advert){
